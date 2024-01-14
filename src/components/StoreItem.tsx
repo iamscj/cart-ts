@@ -31,6 +31,7 @@ export const StoreItem = ({
   const items = useAppSelector((state) => state.items);
   let quantity = items.find((i) => String(i.id) === String(id))?.quantity || 0;
 
+  // console.log(items);
   const dispatch = useAppDispatch();
   const nextSlide = () => {
     setCurrentImage((prevImg) => (prevImg + 1) % imgUrl.length);
@@ -153,13 +154,37 @@ export const StoreItem = ({
             "&:hover": { backgroundColor: "#456c45" },
             marginBottom: "0.5rem",
           }}
-          onClick={() => dispatch(addItem(id))}
+          onClick={() =>
+            dispatch(
+              addItem({
+                id,
+                name,
+                price,
+                rating,
+                categories,
+                imgUrl,
+              })
+            )
+          }
         >
           Add To Cart
         </Button>
       ) : (
         <Stack direction="row" justifyContent="center">
-          <Button onClick={() => dispatch(removeItemByOne(id))}>
+          <Button
+            onClick={() =>
+              dispatch(
+                removeItemByOne({
+                  id,
+                  name,
+                  price,
+                  rating,
+                  categories,
+                  imgUrl,
+                })
+              )
+            }
+          >
             <RemoveIcon
               sx={{ color: "white", backgroundColor: "red", width: "7rem" }}
             />
@@ -168,7 +193,20 @@ export const StoreItem = ({
           <Typography variant="h6" sx={{ marginX: "0.4rem" }}>
             {quantity}
           </Typography>
-          <Button onClick={() => dispatch(addItem(id))}>
+          <Button
+            onClick={() =>
+              dispatch(
+                addItem({
+                  id,
+                  name,
+                  price,
+                  rating,
+                  categories,
+                  imgUrl,
+                })
+              )
+            }
+          >
             <AddIcon
               sx={{ color: "white", backgroundColor: "green", width: "7rem" }}
             />

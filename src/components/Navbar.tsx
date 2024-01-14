@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Navigate, useNavigate } from "react-router-dom";
+import SideBar from "./SideBar";
 
 type ResponsiveAppBarProps = {
   pages: string[];
@@ -77,7 +78,7 @@ export function ResponsiveAppBar({ pages, settings }: ResponsiveAppBarProps) {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "black" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -99,13 +100,21 @@ export function ResponsiveAppBar({ pages, settings }: ResponsiveAppBarProps) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <Button
+                      key={page}
+                      onClick={() => navigate(page.toLowerCase())}
+                      sx={{ my: 2, color: "black", display: "block" }}
+                    >
+                      {page}
+                    </Button>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <ShoppingBasketIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            sx={{ display: { xs: "flex", md: "none", color: "black" }, mr: 1 }}
           />
           <Typography
             variant="h5"
@@ -119,7 +128,7 @@ export function ResponsiveAppBar({ pages, settings }: ResponsiveAppBarProps) {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "black",
               textDecoration: "none",
             }}
           >
@@ -136,8 +145,8 @@ export function ResponsiveAppBar({ pages, settings }: ResponsiveAppBarProps) {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          <SideBar />
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -165,7 +174,7 @@ export function ResponsiveAppBar({ pages, settings }: ResponsiveAppBarProps) {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,7 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// interface ItemType {
+//   id: number;
+//   quantity: number;
+// }
 interface ItemType {
-  id: string;
+  id: number;
+  name: string;
+  price: number;
+  rating: number;
+  categories: string[];
+  imgUrl: string[];
   quantity: number;
 }
 
@@ -12,20 +21,29 @@ export const itemSlice = createSlice({
   name: "item",
   reducers: {
     addItem: (state, action) => {
-      const id = action.payload;
+      const { id, name, price, rating, categories, imgUrl } = action.payload;
       const existingItem = state.find((item) => item.id === id);
       if (existingItem === undefined) {
-        state.push({ id, quantity: 1 });
+        state.push({
+          id,
+          name,
+          price,
+          rating,
+          categories,
+          imgUrl,
+          quantity: 1,
+        });
       } else {
         existingItem.quantity += 1;
       }
     },
     removeItem: (state, action) => {
-      const id = action.payload;
+      const { id, name, price, rating, categories, imgUrl } = action.payload;
+      console.log("hi", id);
       return state.filter((item) => item.id !== id);
     },
     removeItemByOne: (state, action) => {
-      const id = action.payload;
+      const { id, name, price, rating, categories, imgUrl } = action.payload;
       const existingItem = state.find((item) => item.id === id);
       if (existingItem !== undefined) {
         if (existingItem.quantity !== 1) {

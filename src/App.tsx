@@ -5,10 +5,9 @@ import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { ResponsiveAppBar as Navbar } from "./components/Navbar";
-import Cart from "./components/Cart";
 
 function App() {
-  const pages = ["Home", "Store", "About", "Cart"];
+  const pages = ["Home", "Store", "About"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   return (
     <>
@@ -17,7 +16,6 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/store" element={<Store />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );
