@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Book",
+    "price": 50,
+    "rating": 4,
+    "categories": ["education", "stationary"],
+    "imgUrl": ["/imgs/book1.jpg", "/imgs/book2.jpg", "/imgs/book3.jpg"]
+  },
+  {
+    "id": 2,
+    "name": "Pen",
+    "price": 10,
+    "rating": 3.8,
+    "categories": ["education", "stationary"],
+    "imgUrl": ["/imgs/pen1.jpg", "/imgs/pen2.jpg"]
+  },
+  {
+    "id": 3,
+    "name": "Eraser",
+    "price": 5,
+    "rating": 4.5,
+    "categories": ["education", "stationary"],
+    "imgUrl": ["/imgs/eraser1.jpg", "/imgs/eraser2.jpg"]
+  }
+]
