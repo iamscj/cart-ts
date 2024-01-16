@@ -22,7 +22,10 @@ const Cart = () => {
         textAlign="center"
         mt="1rem"
         marginX="1rem"
-        sx={{ background: "#e0e0e0" }}
+        sx={{
+          background: "#e0e0e0",
+          boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+        }}
       >
         Cart
       </Typography>
@@ -33,7 +36,7 @@ const Cart = () => {
           <Typography
             variant="h6"
             textAlign="center"
-            mt="1rem"
+            marginTop="2rem"
             color="text.secondary"
             marginX="1rem"
           >
@@ -46,6 +49,7 @@ const Cart = () => {
               margin: "auto",
               color: "black",
               marginTop: "2rem",
+              marginBottom: "2rem",
             }}
           >
             Proceed

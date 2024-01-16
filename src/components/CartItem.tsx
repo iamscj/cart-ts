@@ -33,6 +33,9 @@ const CartItem = ({
         minWidth: 250,
         marginTop: "2rem",
         backgroundColor: "#e0e0e0",
+        border: "1px solid #e0e0e0",
+        marginX: "1rem",
+        boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
       <CardMedia
@@ -85,7 +88,7 @@ const CartItem = ({
           }
         >
           <RemoveIcon
-            sx={{ color: "white", backgroundColor: "red", width: "4rem" }}
+            sx={{ color: "red", width: "4rem", border: "1px solid red" }}
           />
         </Button>
 
@@ -107,7 +110,11 @@ const CartItem = ({
           }
         >
           <AddIcon
-            sx={{ color: "white", backgroundColor: "green", width: "4rem" }}
+            sx={{
+              color: "green",
+              width: "4rem",
+              border: "1px solid green",
+            }}
           />
         </Button>
       </Stack>
@@ -144,7 +151,13 @@ const CartItem = ({
             })
           );
         }}
-        sx={{ color: "red", display: "block", margin: "auto" }}
+        sx={{
+          color: "red",
+          display: "block",
+          margin: "auto",
+          border: "1px solid red  ",
+          marginBottom: "1rem",
+        }}
       >
         Remove Item
       </Button>

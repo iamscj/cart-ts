@@ -68,6 +68,8 @@ export const StoreItem = ({
         maxWidth: 345,
         marginTop: "2rem",
         backgroundColor: "#e0e0e0",
+        border: "1px solid #e0e0e0",
+        boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -148,11 +150,11 @@ export const StoreItem = ({
           sx={{
             margin: "auto",
             display: "block",
-            backgroundColor: "green",
-            color: "white",
+            color: "green",
             width: "14rem",
-            "&:hover": { backgroundColor: "#456c45" },
+            "&:hover": { color: "#15be15" },
             marginBottom: "0.5rem",
+            border: "1px solid green",
           }}
           onClick={() =>
             dispatch(
@@ -186,7 +188,12 @@ export const StoreItem = ({
             }
           >
             <RemoveIcon
-              sx={{ color: "white", backgroundColor: "red", width: "7rem" }}
+              sx={{
+                color: "red",
+                backgroundColor: "#E0E0E0",
+                width: "7rem",
+                border: "1px solid red", // Set the border color to green
+              }}
             />
           </Button>
 
@@ -208,7 +215,12 @@ export const StoreItem = ({
             }
           >
             <AddIcon
-              sx={{ color: "white", backgroundColor: "green", width: "7rem" }}
+              sx={{
+                color: "green",
+                backgroundColor: "#E0E0E0",
+                width: "7rem",
+                border: "1px solid green", // Set the border color to green
+              }}
             />
           </Button>
         </Stack>
