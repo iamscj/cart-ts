@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// interface ItemType {
-//   id: number;
-//   quantity: number;
-// }
 interface ItemType {
   id: number;
   name: string;
@@ -14,7 +10,18 @@ interface ItemType {
   quantity: number;
 }
 
-const initState: ItemType[] = [];
+const localStorageKey = "items";
+
+const saveStateToLocalStorage = (state: ItemType[]): void => {
+  localStorage.setItem(localStorageKey, JSON.stringify(state));
+};
+
+const getInitialState = (): ItemType[] => {
+  const storedState = localStorage.getItem(localStorageKey);
+  return storedState ? JSON.parse(storedState) : [];
+};
+
+const initState: ItemType[] = getInitialState();
 
 export const itemSlice = createSlice({
   initialState: initState,
@@ -36,11 +43,13 @@ export const itemSlice = createSlice({
       } else {
         existingItem.quantity += 1;
       }
+      saveStateToLocalStorage(state);
     },
     removeItem: (state, action) => {
       const { id, name, price, rating, categories, imgUrl } = action.payload;
-      console.log("hi", id);
-      return state.filter((item) => item.id !== id);
+      const newState = state.filter((item) => item.id !== id);
+      saveStateToLocalStorage(newState);
+      return newState;
     },
     removeItemByOne: (state, action) => {
       const { id, name, price, rating, categories, imgUrl } = action.payload;
@@ -48,8 +57,11 @@ export const itemSlice = createSlice({
       if (existingItem !== undefined) {
         if (existingItem.quantity !== 1) {
           existingItem.quantity -= 1;
+          saveStateToLocalStorage(state);
         } else {
-          return state.filter((item) => item.id !== id);
+          const newState = state.filter((item) => item.id !== id);
+          saveStateToLocalStorage(newState);
+          return newState;
         }
       }
     },
