@@ -31,7 +31,6 @@ export const StoreItem = ({
   const items = useAppSelector((state) => state.items);
   let quantity = items.find((i) => String(i.id) === String(id))?.quantity || 0;
 
-  // console.log(items);
   const dispatch = useAppDispatch();
   const nextSlide = () => {
     setCurrentImage((prevImg) => (prevImg + 1) % imgUrl.length);
@@ -197,7 +196,15 @@ export const StoreItem = ({
             />
           </Button>
 
-          <Typography variant="h6" sx={{ marginX: "0.4rem" }}>
+          <Typography
+            variant="h6"
+            textAlign="center"
+            sx={{
+              margin: "auto",
+              background: "white",
+              width: "4rem",
+            }}
+          >
             {quantity}
           </Typography>
           <Button

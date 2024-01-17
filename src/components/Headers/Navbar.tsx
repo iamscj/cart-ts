@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Navigate, useNavigate } from "react-router-dom";
-import SideBar from "./SideBar";
+import SideBar from "../SideBar";
 
 type ResponsiveAppBarProps = {
   pages: string[];

@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Eraser",
-    "price": 5,
+    "price": 10,
     "rating": 4.5,
     "categories": ["education", "stationary"],
     "imgUrl": ["/imgs/eraser1.jpg", "/imgs/eraser2.jpg"]

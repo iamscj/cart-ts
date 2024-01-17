@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { About } from "./pages/About";
-import { ResponsiveAppBar as Navbar } from "./components/Navbar";
+import { ResponsiveAppBar as Navbar } from "./components/Headers/Navbar";
 
 function App() {
   const pages = ["Home", "Store", "About"];

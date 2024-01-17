@@ -25,7 +25,7 @@ const initState: ItemType[] = getInitialState();
 
 export const itemSlice = createSlice({
   initialState: initState,
-  name: "item",
+  name: "items",
   reducers: {
     addItem: (state, action) => {
       const { id, name, price, rating, categories, imgUrl } = action.payload;
