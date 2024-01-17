@@ -39,9 +39,25 @@ export const storeItemSlice = createSlice({
       }
       return state;
     },
+    filterBySearch: (state, action) => {
+      state = initState;
+      const searchFieldVal = action.payload.trim();
+      if (searchFieldVal.length === 0) {
+        return initState;
+      }
+      const newState = state.filter(
+        (item) =>
+          item.name.toLowerCase().startsWith(searchFieldVal.toLowerCase()) ||
+          item.categories.some((category) =>
+            category.toLowerCase().startsWith(searchFieldVal.toLowerCase())
+          )
+      );
+      return newState;
+    },
   },
 });
 
-export const { sortByPrice, sortByRating } = storeItemSlice.actions;
+export const { sortByPrice, sortByRating, filterBySearch } =
+  storeItemSlice.actions;
 
 export default storeItemSlice.reducer;

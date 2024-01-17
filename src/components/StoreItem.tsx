@@ -132,7 +132,7 @@ export const StoreItem = ({
         sx={{ marginY: "0.5rem" }}
         flexWrap="wrap"
       >
-        <Typography variant="h6" color="text.secondary">
+        <Typography variant="h6" color="text.secondary" marginX="1rem">
           Price : {formatCurrency(price)}
         </Typography>
         <Typography
