@@ -11,6 +11,7 @@ const SubNavbar = () => {
       spacing={1}
       flexWrap="wrap"
       sx={{ marginTop: "1rem" }}
+      justifyContent="center"
     >
       {subNavItems.map((subNavItem, index) => (
         <div key={index}>{subNavItem}</div>

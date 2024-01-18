@@ -1,24 +1,13 @@
 import { Grid, Box } from "@mui/material";
 import { StoreItem } from "../components/StoreItem";
 import itemsStatic from "../data/items.json";
-import { useAppSelector, useAppDispatch } from "../redux/hooks";
-import { sortByPrice } from "../redux/slices/storeItem";
+import { useAppSelector } from "../redux/hooks";
 import { useEffect, useState } from "react";
 import SubNavbar from "../components/Headers/SubNavbar";
-
-type StoreItemProps = {
-  id: number;
-  name: string;
-  price: number;
-  rating: number;
-  categories: string[];
-  imgUrl: string[];
-};
+import { StoreItemProps } from "../types";
 
 export const Store = () => {
   const storeItems = useAppSelector((state) => state.storeItems);
-  const dispatch = useAppDispatch();
-
   const [items, setItems] = useState<StoreItemProps[]>(itemsStatic);
 
   useEffect(() => {

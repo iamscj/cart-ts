@@ -4,16 +4,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { formatCurrency } from "../utils/formatCurrenct";
 import { useAppDispatch } from "../redux/hooks";
 import { addItem, removeItem, removeItemByOne } from "../redux/slices/item";
-
-interface CartItemProps {
-  id: number;
-  name: string;
-  price: number;
-  rating: number;
-  categories: string[];
-  imgUrl: string[];
-  quantity: number;
-}
+import { CartItemProps } from "../types";
 
 const CartItem = ({
   id,

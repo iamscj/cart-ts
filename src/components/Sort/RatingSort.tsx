@@ -1,13 +1,11 @@
 import { Button } from "@mui/material";
 import Popover from "@mui/material/Popover";
-import Typography from "@mui/material/Typography";
 import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { sortByRating } from "../../redux/slices/storeItem";
 import React, { useState } from "react";
 
 const RatingSort = () => {
-  const storeItems = useAppSelector((state) => state.storeItems);
   const dispatch = useAppDispatch();
 
   function handleClick(type: string) {
@@ -31,7 +29,7 @@ const RatingSort = () => {
     <div>
       <Button
         sx={{
-          width: "12rem",
+          width: "17rem",
           height: "2rem",
           p: 0,
           color: "black",

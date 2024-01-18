@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
 import Cart from "./Cart";
@@ -10,7 +10,7 @@ type Anchor = "top" | "left" | "bottom" | "right";
 
 export default function SwipeableTemporaryDrawer() {
   const items = useAppSelector((state) => state.items);
-
+  const [quantity, setQuantity] = useState<number>(0);
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -33,13 +33,20 @@ export default function SwipeableTemporaryDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
+  useEffect(() => {
+    setQuantity(items.reduce((acc, item) => acc + item.quantity, 0));
+  }, [items]);
+
   return (
     <div>
       {(["right"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
             {items.length > 0 ? (
-              <ShoppingCartIcon />
+              <>
+                <ShoppingCartIcon />
+                <div>{quantity}</div>
+              </>
             ) : (
               <ShoppingCartOutlinedIcon />
             )}

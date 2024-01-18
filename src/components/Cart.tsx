@@ -3,9 +3,10 @@ import { useAppSelector } from "../redux/hooks";
 import CartItem from "./CartItem";
 import { Button, Typography } from "@mui/material";
 import { formatCurrency } from "../utils/formatCurrenct";
+import { ItemType } from "../types";
 
 const Cart = () => {
-  const items = useAppSelector((state) => state.items);
+  const items: ItemType[] = useAppSelector((state) => state.items);
   const [totalAmount, setTotalAmount] = useState(0);
   useEffect(() => {
     let total = 0;

@@ -30,5 +30,17 @@
     "rating": 4.7,
     "categories": ["gaming", "computer", "mouse"],
     "imgUrl": ["/imgs/mouse1.jpg", "/imgs/mouse2.jpg"]
+  },
+  {
+    "id": 5,
+    "name": "Headphones",
+    "price": 2000,
+    "rating": 5,
+    "categories": ["gaming", "headphones", "earphones", "earbuds", "earpods"],
+    "imgUrl": [
+      "/imgs/headphones1.jpg",
+      "/imgs/headphones2.jpg",
+      "/imgs/headphones3.jpg"
+    ]
   }
 ]

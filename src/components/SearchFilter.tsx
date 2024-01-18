@@ -1,5 +1,5 @@
 import OutlinedInput from "@mui/material/OutlinedInput";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, InputAdornment } from "@mui/material";
 import { useAppDispatch } from "../redux/hooks";
@@ -42,7 +42,7 @@ const SearchFilter = () => {
             </Button>
           </InputAdornment>
         }
-        sx={{ height: "2.5rem" }}
+        sx={{ height: "2.5rem", width: "17rem" }}
       />
     </>
   );

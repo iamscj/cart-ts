@@ -1,17 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { StoreItemType } from "../../../types";
 import items from "../../../data/items.json";
 
-interface ItemType {
-  id: number;
-  name: string;
-  price: number;
-  rating: number;
-  categories: string[];
-  imgUrl: string[];
-}
-
-const initState: ItemType[] = items;
+const initState: StoreItemType[] = items;
 
 export const storeItemSlice = createSlice({
   initialState: initState,

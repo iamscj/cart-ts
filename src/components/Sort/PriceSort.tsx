@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
 import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { sortByPrice } from "../../redux/slices/storeItem";
 
 const PriceSort = () => {
-  const storeItems = useAppSelector((state) => state.storeItems);
   const dispatch = useAppDispatch();
 
   function handleClick() {
@@ -14,7 +13,7 @@ const PriceSort = () => {
   return (
     <Button
       sx={{
-        width: "12rem",
+        width: "17rem",
         height: "2rem",
         p: 0,
         color: "black",
